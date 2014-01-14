@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+  <title>highlight.js test</title>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" title="Default" href="styles/default.css">
+  <script src="markdown_highlight.js"></script>
+  <script src="jquery.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("#origin_code").keyup(function(){
+      $("#sample_code").html(marked($("#origin_code").val()));
+    });
+
+    $("#height_light_style_select").change(function(){
+      $("link[rel=stylesheet]").attr({href : "styles/"+$(this).val() + ".css"});
+    });
+
+    $("#sample_code").html(marked($("#origin_code").val()));
+  });
+  </script>
+</head>
+<body>
+<div style="margin-top:20px">
+<select id="height_light_style_select">
+  <option value="default">default</option>
+  <option value="arta">arta</option>
+  <option value="ascetic">ascetic</option>
+  <option value="atelier-dune.dark">atelier-dune.dark</option>
+  <option value="atelier-dune.light">atelier-dune.light</option>
+  <option value="atelier-forest.dark">atelier-forest.dark</option>
+  <option value="atelier-forest.light">atelier-forest.light</option>
+  <option value="atelier-lakeside.dark">atelier-lakeside.dark</option>
+  <option value="atelier-lakeside.light">atelier-lakeside.light</option>
+  <option value="atelier-seaside.dark">atelier-seaside.dark</option>
+  <option value="atelier-seaside.light">atelier-seaside.light</option>
+  <option value="brown_paper">brown_paper</option>
+  <option value="dark">dark</option>
+  <option value="docco">docco</option>
+  <option value="far">far</option>
+  <option value="foundation">foundation</option>
+  <option value="github">github</option>
+  <option value="googlecode">googlecode</option>
+  <option value="idea">idea</option>
+  <option value="ir_black">ir_black</option>
+  <option value="magula">magula</option>
+  <option value="mono-blue">mono-blue</option>
+  <option value="monokai">monokai</option>
+  <option value="monokai_sublime">monokai_sublime</option>
+  <option value="obsidian">obsidian</option>
+  <option value="paraiso.dark">paraiso.dark</option>
+  <option value="paraiso.light">paraiso.light</option>
+  <option value="pojoaque">pojoaque</option>
+  <option value="railscasts">railscasts</option>
+  <option value="rainbow">rainbow</option>
+  <option value="school_book">school_book</option>
+  <option value="solarized_dark">solarized_dark</option>
+  <option value="solarized_light">solarized_light</option>
+  <option value="sunburst">sunburst</option>
+  <option value="tomorrow-night-blue">tomorrow-night-blue</option>
+  <option value="tomorrow-night-bright">tomorrow-night-bright</option>
+  <option value="tomorrow-night-eighties">tomorrow-night-eighties</option>
+  <option value="tomorrow-night">tomorrow-night</option>
+  <option value="tomorrow">tomorrow</option>
+  <option value="vs">vs</option>
+  <option value="xcode">xcode</option>
+  <option value="zenburn">zenburn</option>
+</select>
+</div>
+<div style="margin-top:20px">
+<textarea id="origin_code" rows=15 cols=100>
+I am using __markdown__
+```ruby
+Module Stduent
+  def abc
+   p "abc"
+  end
+end
+```
+</textarea>
+</div>
+<div id="sample_code">
+</div>
+</body>
