@@ -8,15 +8,15 @@
   <script src="jquery.js"></script>
   <script>
   $(document).ready(function(){
-    $("#origin_code").keyup(function(){
-      $("#sample_code").html(marked($("#origin_code").val()));
+    $("#blog_content").keyup(function(){
+      $("#blog_preview").html(marked($("#blog_content").val()));
     });
 
     $("#height_light_style_select").change(function(){
       $("link[rel=stylesheet]").attr({href : "styles/"+$(this).val() + ".css"});
     });
 
-    $("#sample_code").html(marked($("#origin_code").val()));
+    $("#blog_preview").html(marked($("#blog_content").val()));
   });
   </script>
 </head>
@@ -68,7 +68,7 @@
 </select>
 </div>
 <div style="margin-top:20px">
-<textarea id="origin_code" rows=15 cols=100>
+<textarea id="blog_content" rows=15 cols=100>
 I am using __markdown__
 ```ruby
 Module Stduent
@@ -79,6 +79,6 @@ end
 ```
 </textarea>
 </div>
-<div id="sample_code">
+<div id="blog_preview">
 </div>
 </body>
