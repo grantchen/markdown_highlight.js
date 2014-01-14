@@ -19,5 +19,7 @@ $(document).ready(function(){
 
 ```
 
+If want change the style, just change `default.css` to other css file which in styles folder.
+
 ## Sample
 Just clone the code and open `test.html` can see the test sample
